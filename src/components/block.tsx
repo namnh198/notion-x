@@ -10,9 +10,10 @@ import {
 } from 'notion-utils'
 import * as React from 'react'
 
-import { BsCheckSquareFill, BsSquare } from 'react-icons/bs'
-import { CiLink } from 'react-icons/ci'
 import { useNotionContext } from '../hooks/context'
+import BsCheckSquareFill from '../icons/BsCheckSquareFill'
+import BsSquare from '../icons/BsSquare'
+import CiLink from '../icons/CiLink'
 import { generateAnchor } from '../lib/helpers'
 import { getListNumber, isUrl } from '../lib/utils'
 import BlockCallout from './BlockCallout'

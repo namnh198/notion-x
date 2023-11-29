@@ -3,8 +3,7 @@
 import cn from 'classnames'
 import { usePathname } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
-
-import { HiSwitchHorizontal } from 'react-icons/hi'
+import HiSwitchHorizontal from '../icons/HiSwitchHorizontal'
 
 type LocalRouteChangeProps = {
   localHostname?: string // eg: localhost:3004

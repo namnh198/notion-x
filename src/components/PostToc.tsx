@@ -6,8 +6,8 @@ import * as types from 'notion-types'
 import { TableOfContentsEntry } from 'notion-utils'
 import React, { useState } from 'react'
 
-import { IoIosArrowDown } from 'react-icons/io'
 import { useHeadsObserver } from '../hooks/headObserver'
+import IoIosArrowDown from '../icons/IoIosArrowDown'
 import { generateAnchor } from '../lib/helpers'
 import { Text } from './text'
 

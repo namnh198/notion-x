@@ -2,7 +2,7 @@
 
 import Moment from 'moment'
 import React, { useEffect, useState } from 'react'
-import { BiDotsHorizontalRounded } from 'react-icons/bi'
+import BiDotsHorizontalRounded from '../icons/BiDotsHorizontalRounded'
 
 type DateProps = {
   dateString: string

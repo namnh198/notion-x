@@ -2,7 +2,7 @@ import cn from 'classnames'
 import Link from 'next/link'
 import React from 'react'
 
-import { TiTag } from 'react-icons/ti'
+import TiTag from '../icons/TiTag'
 import { Category, Tag } from '../interface'
 
 type PostHeaderTopicsProps = {

@@ -1,7 +1,7 @@
 import cn from 'classnames'
 import React from 'react'
 
-import { AiOutlineLoading3Quarters } from 'react-icons/ai'
+import AiOutlineLoading3Quarters from '../icons/AiOutlineLoading3Quarters'
 
 export function ImagePlaceholderPostHeader() {
   return (

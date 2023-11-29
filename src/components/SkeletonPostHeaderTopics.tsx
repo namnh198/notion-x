@@ -1,7 +1,7 @@
 import cn from 'classnames'
 import React from 'react'
 
-import { TiTag } from 'react-icons/ti'
+import TiTag from '../icons/TiTag'
 
 type SkeletonPostHeaderTopicsProps = {
   className?: string

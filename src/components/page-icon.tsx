@@ -3,9 +3,9 @@ import { Block, CalloutBlock, PageBlock } from 'notion-types'
 import { getBlockIcon, getBlockTitle } from 'notion-utils'
 import * as React from 'react'
 
-import { AiOutlineLoading3Quarters } from 'react-icons/ai'
-import { CiFileOn } from 'react-icons/ci'
 import { useNotionContext } from '../hooks/context'
+import AiOutlineLoading3Quarters from '../icons/AiOutlineLoading3Quarters'
+import CiFileOn from '../icons/CiFileOn'
 import { isUrl } from '../lib/utils'
 import { LazyImage } from './lazy-image'
 
