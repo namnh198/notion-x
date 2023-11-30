@@ -7,7 +7,7 @@ export default function HiOutlineFire({ className }: { className?: string }) {
       stroke="currentColor"
       fill="none"
       strokeWidth={1.5}
-      viewBox="0 0 0.12 0.12"
+      viewBox="0 0 24 24"
       aria-hidden="true"
       height="1em"
       width="1em"
@@ -16,12 +16,12 @@ export default function HiOutlineFire({ className }: { className?: string }) {
       <path
         strokeLinecap="round"
         strokeLinejoin="round"
-        d="M.077.026A.041.041 0 0 1 .06.105a.041.041 0 0 1-.03-.07.041.041 0 0 0 .015.013.045.045 0 0 1 .017-.034.041.041 0 0 0 .015.012z"
+        d="M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.038 7.048 8.287 8.287 0 009 9.6a8.983 8.983 0 013.361-6.867 8.21 8.21 0 003 2.48z"
       />
       <path
         strokeLinecap="round"
         strokeLinejoin="round"
-        d="M.06.09A.019.019 0 0 0 .062.053a.03.03 0 0 0-.01.018.03.03 0 0 1-.011-.005A.019.019 0 0 0 .06.09z"
+        d="M12 18a3.75 3.75 0 00.495-7.467 5.99 5.99 0 00-1.925 3.546 5.974 5.974 0 01-2.133-1A3.75 3.75 0 0012 18z"
       />
     </svg>
   )
