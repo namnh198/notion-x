@@ -35,9 +35,12 @@ export default function PostSimple({ post, options }: PostSimpleProps) {
     <Link
       key={post.id}
       href={post.permalink}
-      className="group flex items-center p-4 hover:bg-neutral-50 dark:hover:bg-neutral-800"
+      className="group flex items-center p-4 hover:bg-neutral-50 dark:hover:bg-neutral-800 first:rounded-t-xl last:rounded-b-xl"
     >
-      <div className="relative shrink-0 mr-2.5 text-2xl">
+      <div
+        className={cn('relative shrink-0 mr-2.5 text-2xl', { 'tooltip-auto': post.verified })}
+        data-title={post.verified && 'Verified by me.'}
+      >
         {post.pinned && options?.showPinned ? <AiFillPushpin /> : <IsDocumentText />}
         {post.verified && (
           <span className="absolute bottom-[-5px] right-[-5px]">
