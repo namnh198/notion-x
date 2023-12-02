@@ -6,7 +6,7 @@ import {
 import dynamic from 'next/dynamic'
 import React from 'react'
 
-import { TextIgnoreField } from '../interface'
+import { TextIgnoreField } from '../../interface'
 import BlockText from './BlockText'
 
 const DynamicInlineEquation = dynamic(() => import('./BlockInlineEquation'))

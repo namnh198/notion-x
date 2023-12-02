@@ -2,9 +2,9 @@ import { FileBlock } from 'notion-types'
 import * as React from 'react'
 
 import cn from 'classnames'
-import { useNotionContext } from '../hooks/context'
-import BsPaperclip from '../icons/BsPaperclip'
-import { Text } from './text'
+import { useNotionContext } from '../../hooks/context'
+import BsPaperclip from '../../icons/BsPaperclip'
+import { Text } from '../text'
 
 export const File: React.FC<{
   block: FileBlock

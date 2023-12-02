@@ -4,9 +4,9 @@ import { Disclosure, Transition } from '@headlessui/react'
 import cn from 'classnames'
 import React from 'react'
 
-import { basicBlockGap } from '../components/block'
-import BsFillCaretRightFill from '../icons/BsFillCaretRightFill'
-import { mapColorClass } from '../lib/helpers'
+import BsFillCaretRightFill from '../../icons/BsFillCaretRightFill'
+import { mapColorClass } from '../../lib/helpers'
+import { basicBlockGap } from '../block'
 
 export default function BlockToggle(props: {
   text: React.ReactNode

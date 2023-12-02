@@ -3,7 +3,7 @@
 import cn from 'classnames'
 import React from 'react'
 
-import { getYoutubeId } from '../lib/utils'
+import { getYoutubeId } from '../../lib/utils'
 import YoutubeEmbed from './YoutubeEmbed'
 
 type BlockVideoProps = {

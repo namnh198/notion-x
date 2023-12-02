@@ -1,7 +1,7 @@
 import cn from 'classnames'
 import React from 'react'
 
-import { mapColorClass } from '../lib/helpers'
+import { mapColorClass } from '../../lib/helpers'
 
 export default function BlockCallout(props: {
   text: React.ReactNode

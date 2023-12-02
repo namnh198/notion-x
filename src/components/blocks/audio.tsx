@@ -2,7 +2,7 @@ import { AudioBlock } from 'notion-types'
 import * as React from 'react'
 
 import cn from 'classnames'
-import { useNotionContext } from '../hooks/context'
+import { useNotionContext } from '../../hooks/context'
 
 export const Audio: React.FC<{
   block: AudioBlock

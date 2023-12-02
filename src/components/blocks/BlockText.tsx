@@ -7,8 +7,8 @@ import { get } from 'lodash'
 import Link from 'next/link'
 import React from 'react'
 
-import { AnnotationIgnoreField, TextIgnoreField } from '../interface'
-import { generateTextAnnotationClasses } from '../lib/helpers'
+import { AnnotationIgnoreField, TextIgnoreField } from '../../interface'
+import { generateTextAnnotationClasses } from '../../lib/helpers'
 
 type TextProps = {
   richText: TextRichTextItemResponse | MentionRichTextItemResponse
