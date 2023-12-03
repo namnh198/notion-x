@@ -1,11 +1,25 @@
 import { RichTextItemResponse } from '@notionhq/client/build/src/api-endpoints'
 import { StaticImageData } from 'next/image'
-import { Block } from 'notion-types'
+import { Block, CollectionInstance, CollectionQueryResult } from 'notion-types'
 
 export type OptionalCatchAllProps = { params: OptionalCatchAllParams }
 export type OptionalCatchAllParams = { slug: string[] }
 export type DynamicSegmentParamsProps = { params: DynamicSegmentParams }
 export type DynamicSegmentParams = { slug: string }
+
+export interface CollectionInstanceNotion extends CollectionInstance {
+  result: CollectionQueryResultNotion
+}
+
+export interface CollectionQueryResultNotion extends CollectionQueryResult {
+  reducerResults?: {
+    collection_group_results?: {
+      type: string
+      blockIds: string[]
+      hasMore: boolean
+    }
+  }
+}
 
 export type ImageType = {
   sourceUrl?: string | null

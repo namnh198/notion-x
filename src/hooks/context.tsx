@@ -5,9 +5,9 @@
 import { ExtendedRecordMap, PreviewImage } from 'notion-types'
 import * as React from 'react'
 
+import { wrapNextImage, wrapNextLink } from '../components/NextComponent'
 import { SimpleImageProps } from '../components/SimpleImage'
 import { AssetWrapper } from '../components/asset-wrapper'
-import { wrapNextImage, wrapNextLink } from '../lib/NextComponent'
 import { defaultMapImageUrl, defaultMapPageUrl } from '../lib/utils'
 import { MapImageUrlFn, MapPageUrlFn, NotionComponents, SearchNotionFn } from '../types'
 

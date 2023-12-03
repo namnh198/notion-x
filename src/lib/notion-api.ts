@@ -5,84 +5,70 @@ import {
   QueryDatabaseResponse,
   RichTextItemResponse
 } from '@notionhq/client/build/src/api-endpoints'
-import got from 'got'
 import { get, set } from 'lodash'
-import { CollectionInstance, SearchParams } from 'notion-types'
+import { NotionAPI } from 'notion-client'
+import { SearchParams } from 'notion-types'
 import ogs from 'open-graph-scraper'
 import pMemoize from 'p-memoize'
 
-import { BookmarkPreview, NotionSorts } from '../interface'
+import { BookmarkPreview, CollectionInstanceNotion, NotionSorts } from '../interface'
 import { cleanText, defaultBlurData, idToUuid } from './helpers'
 
 export const notionMaxRequest = 100
 
+export const api = new NotionAPI({
+  authToken: process.env.NOTION_TOKEN_V2,
+  activeUser: process.env.NOTION_ACTIVE_USER,
+  userTimeZone: 'Asia/Saigon'
+})
+
 /**
  * Unofficial API for getting all pages in a database
  */
-export async function getUnofficialDatabaseImpl(opts: {
-  spaceId?: string
+export const getUnofficialDatabaseImpl = async ({
+  sourceId,
+  collectionViewId,
+  filter = [],
+  searchQuery = '',
+  limit = notionMaxRequest,
+  sorts = []
+}: {
   sourceId?: string
   collectionViewId?: string
-  notionTokenV2?: string
-  notionActiveUser?: string
-  notionApiWeb?: string
-}): Promise<CollectionInstance> {
-  const { spaceId, sourceId, collectionViewId, notionTokenV2, notionActiveUser, notionApiWeb } =
-    opts
-  if (!spaceId) throw new Error('spaceId is not defined')
-  if (!sourceId) throw new Error('sourceId is not defined')
-  if (!collectionViewId) throw new Error('collectionViewId is not defined')
-  if (!notionTokenV2) throw new Error('notionTokenV2 is not defined')
-  if (!notionActiveUser) throw new Error('notionActiveUser is not defined')
-  if (!notionApiWeb) throw new Error('notionApiWeb is not defined')
-
-  const headers: any = {
-    'Content-Type': 'application/json',
-    cookie: `token_v2=${notionTokenV2}`,
-    'x-notion-active-user-header': notionActiveUser
+  filter?: Array<any>
+  searchQuery?: string
+  limit?: number
+  sorts?: NotionSorts[]
+}): Promise<CollectionInstanceNotion> => {
+  if (!sourceId || !collectionViewId) {
+    throw new Error('Notion sourceId, collectionViewId are required')
   }
 
-  const body = {
-    collectionView: {
-      id: collectionViewId,
-      spaceId
-    },
-    source: {
-      type: 'collection',
-      id: sourceId,
-      spaceId
-    },
-    loader: {
-      type: 'reducer',
-      reducers: {
-        collection_group_results: {
-          type: 'results',
-          limit: 50
-        },
-        'table:uncategorized:title:count': {
-          type: 'aggregation',
-          aggregation: {
-            property: 'title',
-            aggregator: 'count'
-          }
-        }
-      },
-      sort: []
+  const collectionView: any = {
+    query2: {
+      sort: sorts,
+      filter: {
+        filters: filter
+      }
     }
   }
 
-  const url = `${notionApiWeb}/queryCollection`
-
-  return await fetch(url, {
-    method: 'POST',
-    headers,
-    body: JSON.stringify(body)
-  }).then(res => res.json())
+  return await api.getCollectionData(sourceId, collectionViewId, collectionView, {
+    searchQuery,
+    limit
+  })
 }
 
 export const getUnofficialDatabase = pMemoize(getUnofficialDatabaseImpl, {
   cacheKey: (...args) => JSON.stringify(args)
 })
+
+/**
+ * Unofficial API for getting page "id" in a database
+ */
+export const getPage = async (id: string) => {
+  return await api.getPage(id)
+}
 
 /**
  * https://developers.notion.com/reference/post-database-query
@@ -357,23 +343,7 @@ async function parseMention(
 }
 
 // Used for unofficial APIs
-export async function searchNotion(
-  params: SearchParams,
-  apiUrl: string,
-  tokenV2: string,
-  activeUser: string,
-  dbId: string
-): Promise<any> {
-  if (!apiUrl) throw new Error('apiUrl is not defined')
-  if (!tokenV2) throw new Error('tokenV2 is not defined')
-  if (!activeUser) throw new Error('activeUser is not defined')
-
-  const headers: any = {
-    'Content-Type': 'application/json',
-    cookie: `token_v2=${tokenV2}`,
-    'x-notion-active-user-header': activeUser
-  }
-
+export async function searchNotion(params: SearchParams, dbId: string): Promise<any> {
   if (!dbId) {
     throw new Error('dbId is not defined')
   }
@@ -401,12 +371,5 @@ export async function searchNotion(
     }
   }
 
-  const url = `${apiUrl}/search`
-
-  return got
-    .post(url, {
-      body: JSON.stringify(body),
-      headers
-    })
-    .json()
+  return await api.fetch({ endpoint: 'search', body })
 }
