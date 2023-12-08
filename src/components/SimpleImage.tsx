@@ -45,6 +45,10 @@ export default function SimpleImage(props: SimpleImageProps) {
   )
 
   const zoomRef = React.useRef(zoom ? zoom.clone() : null)
+  const aspectRatio = {
+    width: props.width || props.style?.width,
+    height: props.height || props.style?.height
+  }
 
   const attachZoom = React.useCallback(
     (image: any) => {
@@ -86,11 +90,8 @@ export default function SimpleImage(props: SimpleImageProps) {
           src={props.src}
           alt={props.alt || 'Undefined image name'}
           className={props.className}
-          style={{
-            ...props.style,
-            width: props.width || props.style?.width,
-            height: props.height || props.style?.height
-          }}
+          style={{ ...props.style, ...aspectRatio }}
+          {...aspectRatio}
           ref={attachZoomRef}
           loading="lazy"
           decoding="async"
