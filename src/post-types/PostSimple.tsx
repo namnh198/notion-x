@@ -49,14 +49,14 @@ export default function PostSimple({ post, options }: PostSimpleProps) {
         )}
       </div>
       <div className="flex-1">
-        <h2 className="text-[15px] group-hover:text-indigo-800 dark:group-hover:text-indigo-400 text-neutral-900 dark:text-neutral-100 font-medium">
+        <h3 className="text-[15px] group-hover:text-indigo-800 dark:group-hover:text-indigo-400 text-neutral-900 dark:text-neutral-100 font-medium">
           {post.title}
           {post.draft && (
             <BadgeLabel labelType="draft" className="ml-2">
               draft
             </BadgeLabel>
           )}
-        </h2>
+        </h3>
       </div>
       {(post.createdDate || post.updatedDate) && (
         <div className="gap-2 hidden md:flex items-center">
