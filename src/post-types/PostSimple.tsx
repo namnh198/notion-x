@@ -5,7 +5,7 @@ import cn from 'classnames'
 import Link from 'next/link'
 import BadgeLabel from '../components/BadgeLabel'
 import DateComponent from '../components/DateComponent'
-import { usePostDateStatus } from '../hooks/postUpdatedDateStatus'
+import { usePostDateStatus } from '../hooks/hook'
 import AiFillPushpin from '../icons/AiFillPushpin'
 import HiMiniCheckBadge from '../icons/HiMiniCheckBadge'
 import IsDocumentText from '../icons/IsDocumentText'
@@ -71,14 +71,7 @@ export default function PostSimple({ post, options }: PostSimpleProps) {
             </BadgeLabel>
           )}
           {status === 'new' && (
-            <div
-              className={cn(
-                'px-3 py-0.5 text-[0.8rem] rounded-md whitespace-nowrap',
-                'bg-amber-200 text-amber-900'
-              )}
-            >
-              {options?.newLabel || 'new'}
-            </div>
+            <BadgeLabel labelType="new">{options?.newLabel || 'new'}</BadgeLabel>
           )}
           {post.createdDate && (
             <DateComponent
@@ -91,12 +84,6 @@ export default function PostSimple({ post, options }: PostSimpleProps) {
           )}
         </div>
       )}
-      {/* <div className="gap-2 hidden md:flex items-center">
-        <Badge label={`updated ${getFormattedDate(post.updatedDate)}`} color="green" />
-        <span className="text-xs text-neutral-500 dark:text-neutral-400">
-          added {getFormattedDate(post.createdDate)}
-        </span>
-      </div> */}
     </Link>
   )
 }
