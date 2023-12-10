@@ -6,7 +6,7 @@ import { useNotionContext } from '../hooks/context'
 import { mapNoteUri, removeBaseUrl } from '../lib/helpers'
 import { formatDate, getHashFragmentValue } from '../lib/utils'
 import { NotionComponents } from '../types'
-import { EOI } from './eoi'
+import { EOI } from './blocks/eoi'
 import { GracefulImage } from './graceful-image'
 import { PageTitle } from './page-title'
 

@@ -7,9 +7,9 @@ import dynamic from 'next/dynamic'
 import React from 'react'
 
 import { TextIgnoreField } from '../../interface'
-import BlockText from './BlockText'
+import BlockText from './text'
 
-const DynamicInlineEquation = dynamic(() => import('./BlockInlineEquation'))
+const DynamicInlineEquation = dynamic(() => import('./inline-equation'))
 
 type BlockRichTextProps = {
   richText: RichTextItemResponse

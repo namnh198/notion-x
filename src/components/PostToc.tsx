@@ -21,9 +21,9 @@ type PostTocProps = {
   showContent?: boolean
 }
 // @ts-ignore
-const Equation = dynamic(() => import('./blocks/BlockEquation'))
+const Equation = dynamic(() => import('./blocks/equation'))
 // @ts-ignore
-const Code = dynamic(() => import('./blocks/BlockCode'), { ssr: false })
+const Code = dynamic(() => import('./blocks/code'), { ssr: false })
 
 /**
  * IMPORTANT: Add class "scroll-mt-[70px]" to the heading elements!

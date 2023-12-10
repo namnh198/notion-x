@@ -13,7 +13,7 @@ import { useNotionContext } from '../../hooks/context'
 import FiCheck from '../../icons/FiCheck'
 import RxCopy from '../../icons/RxCopy'
 import { Text } from '../text'
-import Mermaid from './Mermaid'
+import Mermaid from './mermaid'
 
 type BlockCodeProps = {
   block: CodeBlock

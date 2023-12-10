@@ -4,7 +4,7 @@ import cn from 'classnames'
 import React from 'react'
 
 import { getYoutubeId } from '../../lib/utils'
-import YoutubeEmbed from './YoutubeEmbed'
+import YoutubeEmbed from './youtube'
 
 type BlockVideoProps = {
   caption: React.ReactNode

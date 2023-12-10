@@ -19,8 +19,8 @@ type PostBodyProps = {
   simpleImageProps?: SimpleImageProps
 }
 
-const Equation = dynamic(() => import('./blocks/BlockEquation'))
-const Code = dynamic(() => import('./blocks/BlockCode'))
+const Equation = dynamic(() => import('./blocks/equation'))
+const Code = dynamic(() => import('./blocks/code'))
 
 // In case we need more suppored components, check this out:
 // https://github.com/transitive-bullshit/nextjs-notion-starter-kit/blob/main/components/NotionPage.tsx

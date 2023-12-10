@@ -38,6 +38,10 @@ code {
   }
 }
 
+.notion-asset-wrapper-image img {
+  @apply rounded-xl;
+}
+
 // Background
 .notion-gray_background {
   @apply bg-gray-100;
@@ -205,7 +209,6 @@ li::marker {
 // Copied from notion-nextjs-lib
 .w-full > iframe {
   width: 100%;
-  height: -webkit-fill-available;
 }
 
 .no-scrollbar::-webkit-scrollbar {
