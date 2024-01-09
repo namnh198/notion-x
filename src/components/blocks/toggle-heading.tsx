@@ -1,7 +1,7 @@
 'use client'
 
 import { Disclosure } from '@headlessui/react'
-import cn from 'classnames'
+import { cn } from '../lib/utils'
 import React from 'react'
 
 import BsFillCaretRightFill from '../../icons/BsFillCaretRightFill'

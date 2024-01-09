@@ -1,6 +1,6 @@
 'use client'
 
-import cn from 'classnames'
+import { cn } from '../lib/utils'
 import React from 'react'
 
 type LabelTypeVariant = 'normal' | 'draft' | 'new' | 'updated' | 'updatedWithin'

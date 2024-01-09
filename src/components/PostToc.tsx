@@ -1,6 +1,6 @@
 'use client'
 
-import cn from 'classnames'
+import { cn } from '../lib/utils'
 import dynamic from 'next/dynamic'
 import * as types from 'notion-types'
 import { TableOfContentsEntry } from 'notion-utils'

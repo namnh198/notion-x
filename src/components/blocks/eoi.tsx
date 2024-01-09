@@ -1,4 +1,4 @@
-import cn from 'classnames'
+import { cn } from '../lib/utils'
 import { Block } from 'notion-types'
 import * as React from 'react'
 

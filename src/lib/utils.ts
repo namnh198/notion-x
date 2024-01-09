@@ -1,5 +1,6 @@
+import { clsx, type ClassValue } from 'clsx'
 import { BlockMap } from 'notion-types'
-
+import { twMerge } from 'tailwind-merge'
 export { formatDate, formatNotionDateTime, isUrl } from 'notion-utils'
 export * from './map-image-url'
 export * from './map-page-url'
@@ -34,6 +35,8 @@ const groupBlockContent = (blockMap: BlockMap): string[][] => {
 
   return output
 }
+
+export const cn = (...classNames: ClassValue[]) => twMerge(clsx(classNames))
 
 export const getListNumber = (blockId: string, blockMap: BlockMap) => {
   const groups = groupBlockContent(blockMap)

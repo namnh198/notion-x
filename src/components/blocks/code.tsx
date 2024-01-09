@@ -1,6 +1,6 @@
 'use client'
 
-import cn from 'classnames'
+import { cn } from '../lib/utils'
 import { CodeBlock } from 'notion-types'
 import { getBlockTitle } from 'notion-utils'
 import * as React from 'react'

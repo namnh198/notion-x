@@ -1,7 +1,6 @@
 import React from 'react'
 import { Post } from '../interface'
 
-import cn from 'classnames'
 import Link from 'next/link'
 import BadgeLabel from '../components/BadgeLabel'
 import DateComponent from '../components/DateComponent'
@@ -9,6 +8,7 @@ import { usePostDateStatus } from '../hooks/hook'
 import AiFillPushpin from '../icons/AiFillPushpin'
 import HiMiniCheckBadge from '../icons/HiMiniCheckBadge'
 import IsDocumentText from '../icons/IsDocumentText'
+import { cn } from '../lib/utils'
 
 export type PostSimpleOpts = {
   showPinned?: boolean

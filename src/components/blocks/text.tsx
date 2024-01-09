@@ -2,7 +2,7 @@ import {
   MentionRichTextItemResponse,
   TextRichTextItemResponse
 } from '@notionhq/client/build/src/api-endpoints'
-import cn from 'classnames'
+import { cn } from '../lib/utils'
 import { get } from 'lodash'
 import Link from 'next/link'
 import React from 'react'

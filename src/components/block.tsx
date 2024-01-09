@@ -1,4 +1,4 @@
-import cn from 'classnames'
+import { cn } from '../lib/utils'
 import { get } from 'lodash'
 import * as types from 'notion-types'
 import {

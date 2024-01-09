@@ -2,7 +2,7 @@ import { BaseContentBlock, Block, PreviewImage } from 'notion-types'
 import { parsePageId } from 'notion-utils'
 import * as React from 'react'
 
-import cn from 'classnames'
+import { cn } from '../lib/utils'
 import { useNotionContext } from '../hooks/context'
 import { SimpleImageProps } from './SimpleImage'
 import { Asset } from './asset'

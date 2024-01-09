@@ -1,7 +1,7 @@
 'use client'
 
 import { Dialog, Transition } from '@headlessui/react'
-import cn from 'classnames'
+import { cn } from '../lib/utils'
 import { debounce, get } from 'lodash'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'

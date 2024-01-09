@@ -4,7 +4,7 @@ import { throttle } from 'lodash'
 import { TableOfContentsEntry, uuidToId } from 'notion-utils'
 import * as React from 'react'
 
-import cn from 'classnames'
+import { cn } from '../lib/utils'
 
 export const PageAside: React.FC<{
   toc: Array<TableOfContentsEntry>

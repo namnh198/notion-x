@@ -1,7 +1,7 @@
 import { FileBlock } from 'notion-types'
 import * as React from 'react'
 
-import cn from 'classnames'
+import { cn } from '../lib/utils'
 import { useNotionContext } from '../../hooks/context'
 import BsPaperclip from '../../icons/BsPaperclip'
 import { Text } from '../text'

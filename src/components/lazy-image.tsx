@@ -1,7 +1,7 @@
 'use client'
 
 /* eslint-disable @next/next/no-img-element */
-import cn from 'classnames'
+import { cn } from '../lib/utils'
 import { isNumber } from 'lodash'
 import { PreviewImage } from 'notion-types'
 import { normalizeUrl } from 'notion-utils'

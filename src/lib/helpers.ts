@@ -2,7 +2,7 @@ import {
   RichTextItemResponse,
   TextRichTextItemResponse
 } from '@notionhq/client/build/src/api-endpoints'
-import cn from 'classnames'
+import { cn } from '../lib/utils'
 import * as types from 'notion-types'
 import slugify from 'slugify'
 

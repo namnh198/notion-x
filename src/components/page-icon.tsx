@@ -1,4 +1,4 @@
-import cn from 'classnames'
+import { cn } from '../lib/utils'
 import { Block, CalloutBlock, PageBlock } from 'notion-types'
 import { getBlockIcon, getBlockTitle } from 'notion-utils'
 import * as React from 'react'
