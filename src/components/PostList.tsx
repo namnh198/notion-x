@@ -1,7 +1,7 @@
 'use client'
-import { cn } from '../lib/utils'
 import React from 'react'
 import type { Post } from '../interface'
+import { cn } from '../lib/utils'
 import PostSimple, { PostSimpleOpts } from '../post-types/PostSimple'
 
 export type PostType = 'simple'

@@ -1,7 +1,7 @@
 'use client'
 
-import { cn } from '../lib/utils'
 import React from 'react'
+import { cn } from '../../lib/utils'
 
 import { getYoutubeId } from '../../lib/utils'
 import YoutubeEmbed from './youtube'

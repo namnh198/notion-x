@@ -2,8 +2,8 @@ import { Block, Decoration } from 'notion-types'
 import { getBlockTitle } from 'notion-utils'
 import * as React from 'react'
 
-import { cn } from '../lib/utils'
 import { useNotionContext } from '../hooks/context'
+import { cn } from '../lib/utils'
 import { PageIcon } from './page-icon'
 import { Text } from './text'
 

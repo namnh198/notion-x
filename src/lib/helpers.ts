@@ -2,9 +2,9 @@ import {
   RichTextItemResponse,
   TextRichTextItemResponse
 } from '@notionhq/client/build/src/api-endpoints'
-import { cn } from '../lib/utils'
 import * as types from 'notion-types'
 import slugify from 'slugify'
+import { cn } from '../lib/utils'
 
 import { AnnotationIgnoreField, Tag } from '../interface'
 

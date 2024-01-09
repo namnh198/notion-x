@@ -1,8 +1,8 @@
 import { GoogleDriveBlock } from 'notion-types'
 import * as React from 'react'
 
-import { cn } from '../lib/utils'
 import { useNotionContext } from '../../hooks/context'
+import { cn } from '../../lib/utils'
 import { GracefulImage } from '../graceful-image'
 
 export const GoogleDrive: React.FC<{

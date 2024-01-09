@@ -1,6 +1,6 @@
-import { cn } from '../lib/utils'
 import React from 'react'
 import IsDocumentText from '../icons/IsDocumentText'
+import { cn } from '../lib/utils'
 import { PostType, postListClass } from './PostList'
 
 type SkeletonPostListProps = {

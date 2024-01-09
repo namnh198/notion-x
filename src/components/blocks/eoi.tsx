@@ -1,10 +1,9 @@
-import { cn } from '../lib/utils'
 import { Block } from 'notion-types'
 import * as React from 'react'
 
 import FaGithub from '../../icons/FaGithub'
 import RxDotFilled from '../../icons/RxDotFilled'
-import { formatNotionDateTime } from '../../lib/utils'
+import { cn, formatNotionDateTime } from '../../lib/utils'
 
 // External Object Instance
 export const EOI: React.FC<{

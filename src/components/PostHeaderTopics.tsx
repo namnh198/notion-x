@@ -1,6 +1,6 @@
-import { cn } from '../lib/utils'
 import Link from 'next/link'
 import React from 'react'
+import { cn } from '../lib/utils'
 
 import TiTag from '../icons/TiTag'
 import { Category, Tag } from '../interface'

@@ -1,4 +1,3 @@
-import { cn } from '../lib/utils'
 import { get } from 'lodash'
 import * as types from 'notion-types'
 import {
@@ -9,6 +8,7 @@ import {
   uuidToId
 } from 'notion-utils'
 import * as React from 'react'
+import { cn } from '../lib/utils'
 
 import { useNotionContext } from '../hooks/context'
 import BsCheckSquareFill from '../icons/BsCheckSquareFill'

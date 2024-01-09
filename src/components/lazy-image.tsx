@@ -1,12 +1,12 @@
 'use client'
 
 /* eslint-disable @next/next/no-img-element */
-import { cn } from '../lib/utils'
 import { isNumber } from 'lodash'
 import { PreviewImage } from 'notion-types'
 import { normalizeUrl } from 'notion-utils'
 import * as React from 'react'
 import { ImageState, LazyImageFull } from 'react-lazy-images'
+import { cn } from '../lib/utils'
 
 import { useNotionContext } from '../hooks/context'
 import AiOutlineLoading3Quarters from '../icons/AiOutlineLoading3Quarters'

@@ -1,10 +1,10 @@
 'use client'
 
-import { cn } from '../lib/utils'
 import dynamic from 'next/dynamic'
 import * as types from 'notion-types'
 import { TableOfContentsEntry } from 'notion-utils'
 import React, { useState } from 'react'
+import { cn } from '../lib/utils'
 
 import { useHeadsObserver } from '../hooks/hook'
 import IoIosArrowDown from '../icons/IoIosArrowDown'

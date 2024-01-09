@@ -3,8 +3,8 @@ import { EquationBlock } from 'notion-types'
 import { getBlockTitle } from 'notion-utils'
 import * as React from 'react'
 
-import { cn } from '../lib/utils'
 import { useNotionContext } from '../../hooks/context'
+import { cn } from '../../lib/utils'
 
 const katexSettings = {
   throwOnError: false,

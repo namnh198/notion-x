@@ -1,7 +1,7 @@
-import { cn } from '../lib/utils'
 import { Block, CalloutBlock, PageBlock } from 'notion-types'
 import { getBlockIcon, getBlockTitle } from 'notion-utils'
 import * as React from 'react'
+import { cn } from '../lib/utils'
 
 import { useNotionContext } from '../hooks/context'
 import AiOutlineLoading3Quarters from '../icons/AiOutlineLoading3Quarters'

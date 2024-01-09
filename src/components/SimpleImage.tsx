@@ -1,8 +1,8 @@
 'use client'
 
 import mediumZoom from '@fisch0920/medium-zoom'
-import { cn } from '../lib/utils'
 import React, { useEffect, useState } from 'react'
+import { cn } from '../lib/utils'
 
 import PiImageSquareDuotone from '../icons/PiImageSquareDuotone'
 

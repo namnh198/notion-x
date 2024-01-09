@@ -1,8 +1,8 @@
 'use client'
 
 import { Disclosure, Transition } from '@headlessui/react'
-import { cn } from '../lib/utils'
 import React from 'react'
+import { cn } from '../../lib/utils'
 
 import BsFillCaretRightFill from '../../icons/BsFillCaretRightFill'
 import { mapColorClass } from '../../lib/helpers'
