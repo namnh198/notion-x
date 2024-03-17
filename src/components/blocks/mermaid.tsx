@@ -6,6 +6,9 @@ import React, { useEffect } from 'react'
 mermaid.initialize({
   startOnLoad: true,
   theme: 'default',
+  themeVariables: {
+    lineColor: 'var(--tw-prose-body)'
+  },
   securityLevel: 'loose'
 })
 

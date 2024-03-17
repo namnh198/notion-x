@@ -71,22 +71,24 @@ export default function BlockCode(props: BlockCodeProps) {
 
   return (
     <div className={cn(className, 'group flex flex-col gap-2')}>
-      <div
-        className={`language-${formatCodeLang(language)} syntax-highlighter relative text-[14px]`}
-      >
-        {syntaxWraper}
+      {block.format?.code_preview_format !== 'preview' && (
         <div
-          className={cn(
-            '!absolute right-2 top-2 duration-100 hover:cursor-pointer group-hover:opacity-100',
-            {
-              'opacity-0': !copied
-            }
-          )}
-          data-title={copied ? copiedLabel : copyLabel}
+          className={`language-${formatCodeLang(language)} syntax-highlighter relative text-[14px]`}
         >
-          {copyBtnWrapper}
+          {syntaxWraper}
+          <div
+            className={cn(
+              '!absolute right-2 top-2 duration-100 hover:cursor-pointer group-hover:opacity-100',
+              {
+                'opacity-0': !copied
+              }
+            )}
+            data-title={copied ? copiedLabel : copyLabel}
+          >
+            {copyBtnWrapper}
+          </div>
         </div>
-      </div>
+      )}
 
       {caption && (
         <div className="italic opacity-60 text-sm">

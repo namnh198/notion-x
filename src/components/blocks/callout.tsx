@@ -13,7 +13,11 @@ export default function BlockCallout(props: {
   return (
     <div className={cn(props.className)}>
       <div
-        className={cn('flex rounded-md', mapColorClass(props.color) || 'border border-gray-200')}
+        className={cn(
+          'flex rounded-md',
+          mapColorClass(props.color) ||
+            'bg-transparent border border-neutral-200 dark:border-slate-600'
+        )}
       >
         {props.icon && <div className="text-2xl pl-4 py-3">{props.icon}</div>}
         <div className="pl-2 pr-4 w-0 flex-1">

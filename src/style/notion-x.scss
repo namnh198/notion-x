@@ -1,22 +1,45 @@
-// FOR UNOFFICIAL NOTION APIS
-// Check if below lines are already in your project
 @tailwind base;
-// @tailwind components;
-// @tailwind utilities;
 
-@import 'katex/dist/katex.min.css';
-@import 'prismjs/themes/prism-tomorrow.css';
+@layer base {
+  .notion-prose {
+    @apply prose max-w-none leading-normal;
+    @apply prose-h1:text-[1.55rem];
+    @apply prose-h2:text-[1.45rem];
+    @apply prose-h3:text-[1.35rem];
+    @apply prose-strong:notion-strong;
+    @apply prose-img:notion-img;
+    @apply prose-blockquote:notion-blockquote;
+    @apply prose-td:notion-td;
+    @apply prose-figure:my-4;
+  }
 
-strong {
-  font-weight: 600;
+  .notion-prose-invert {
+    @apply prose-invert;
+    @apply prose-headings:text-neutral-100;
+  }
+
+  .notion-strong {
+    @apply font-semibold text-inherit;
+  }
+
+  .notion-blockquote {
+    @apply my-4 border border-y-0 border-l-4 border-r-0 border-slate-500 py-3 font-normal not-italic;
+  }
+
+  .notion-img {
+    @apply my-0 rounded-xl;
+  }
+
+  .notion-td {
+    @apply px-[5px] py-2.5;
+  }
+
+  .notion-box-shadow {
+    box-shadow:
+      8px 14px 38px #272c310f,
+      1px 3px 8px #272c3108;
+  }
 }
-
-// Table
-// .notion-simple-table-row {
-//   td {
-//     min-width: 150px;
-//   }
-// }
 
 code {
   .linenumber {
@@ -26,112 +49,66 @@ code {
 
 .table_block_column_header {
   tr:first-child {
-    @apply bg-gray-100 font-semibold;
+    @apply bg-gray-100 font-semibold dark:bg-gray-700;
   }
 }
 
 .table_block_row_header {
   tr {
     td:first-child {
-      @apply bg-gray-100 font-semibold;
+      @apply bg-gray-100 font-semibold dark:bg-gray-700;
     }
   }
-}
-
-.notion-asset-wrapper-image img {
-  @apply rounded-xl;
 }
 
 // Background
-.notion-gray_background {
-  @apply bg-gray-100;
-}
-
-.notion-gray_background,
-.bg-gray-100 {
-  code {
-    background-color: #e5e5e5;
-  }
-
-  .toggle-container {
-    background-color: rgb(249 250 251); // bg-gray-50
-  }
-
-  .toggle-button {
-    &.toggle-open,
-    &:hover {
-      background-color: rgb(229 231 235); // bg-gray-200
-    }
-  }
-}
-
-.notion-brown_background {
-  @apply bg-[#f4eeee];
-}
-
-.notion-orange_background {
-  @apply bg-orange-100;
+.notion-blue_background {
+  @apply bg-blue-500 text-neutral-800;
 }
 
 .notion-yellow_background {
-  @apply bg-amber-100;
-}
-
-.notion-teal_background {
-  @apply bg-[#deffdb];
-}
-
-.notion-blue_background {
-  @apply bg-sky-100;
+  @apply bg-amber-500 text-neutral-800;
 }
 
 .notion-purple_background {
-  @apply bg-purple-100;
+  @apply bg-purple-500 text-neutral-800;
+}
+
+.notion-teal_background {
+  @apply bg-teal-500 text-neutral-800;
 }
 
 .notion-pink_background {
-  @apply bg-pink-100;
+  @apply bg-pink-500 text-neutral-800;
 }
 
 .notion-red_background {
-  @apply bg-red-100;
+  @apply bg-red-500 text-neutral-800;
 }
 
 // Text
-.notion-gray {
-  @apply text-gray-500;
-}
-
-.notion-brown {
-  @apply text-[#9f6b53];
-}
-
-.notion-orange {
-  @apply text-orange-500;
+.notion-blue {
+  @apply text-blue-600;
 }
 
 .notion-yellow {
-  @apply text-amber-500;
+  @apply text-amber-600;
+}
+
+.notion-purple {
+  @apply text-purple-600;
 }
 
 .notion-teal {
   @apply text-teal-600;
 }
 
-.notion-blue {
-  @apply text-blue-500;
-}
-
-.notion-purple {
-  @apply text-purple-500;
-}
-
 .notion-pink {
-  @apply text-pink-500;
+  @apply text-pink-600;
 }
 
 .notion-red {
-  @apply text-red-500;
+  @apply text-red-600;
 }
 
 .notion-page-icon-hero {
@@ -139,367 +116,5 @@ code {
 
   img {
     @apply rounded-lg;
-  }
-}
-
-// List
-ul > ul > li,
-ol > ul > li {
-  list-style-type: circle;
-}
-
-ul > ul > ul > li {
-  list-style-type: square;
-}
-
-ol,
-ul {
-  & > ol,
-  & > ul {
-    & > *:not(li):not(ol):not(ul) {
-      margin-left: -1rem;
-    }
-  }
-}
-
-ol > ol > ul,
-ul > ul > ol {
-  margin-left: -1.25rem;
-}
-
-ol > ol,
-ul > ul {
-  & > *:not(li):not(ol):not(ul) {
-    margin-left: -1.25rem !important;
-  }
-}
-
-.katex-display {
-  margin: 0;
-}
-
-ol,
-ul {
-  & > *:not(li):not(ol):not(ul),
-  .block:not(li):not(ol):not(ul) {
-    margin: 0.75rem 0 !important;
-  }
-}
-
-li::marker {
-  color: #555 !important;
-}
-
-// Quote
-.quote-children {
-  & > * {
-    margin: 0.75rem 0 !important;
-  }
-}
-
-// Icon
-.notion-page-icon-inline {
-  width: 26px;
-
-  img {
-    margin-top: 5px;
-  }
-}
-
-// Copied from notion-nextjs-lib
-.w-full > iframe {
-  width: 100%;
-}
-
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-
-.notion-h-title {
-  .katex {
-    font-size: 105%;
-  }
-}
-
-.katex {
-  font-size: 115%;
-}
-
-// First used for tech badge tooltip in about page
-.tooltip-auto {
-  position: relative;
-
-  &:not(&:hover) {
-    z-index: 0;
-  }
-
-  &:hover {
-    z-index: 1;
-    &:before {
-      opacity: 1;
-    }
-  }
-
-  &:before {
-    display: block;
-    opacity: 0;
-    pointer-events: none;
-    position: absolute;
-    background: #000;
-    border-radius: 5px;
-    color: #fff;
-    content: attr(data-title);
-    font-size: 0.85rem;
-    padding: 2px 8px;
-    left: 5px;
-    line-height: 1.5;
-    top: 120%;
-    height: fit-content;
-    white-space: break-spaces;
-    width: max-content;
-    max-width: 250px;
-    letter-spacing: 0.5px;
-    font-weight: normal;
-  }
-}
-
-.tooltip-right::before {
-  right: 0px;
-  left: auto;
-}
-
-// For headings next to each other
-.heading-container + .heading-container {
-  margin-top: 1.25rem;
-}
-
-.notion-link {
-  strong {
-    color: rgb(1 92 170) !important;
-  }
-  &:hover {
-    strong {
-      color: rgb(219 39 119) !important;
-    }
-  }
-}
-
-pre > code::before {
-  margin-left: -5px !important;
-}
-
-@layer base {
-  .notion-inside-box {
-    & > * {
-      margin-top: 0.75rem !important;
-      margin-bottom: 0.75rem !important;
-    }
-  }
-
-  .notion-link-hover {
-    @apply text-pink-600;
-  }
-
-  .notion-link {
-    @apply hover:notion-link-hover font-normal text-[#015caa] no-underline;
-  }
-
-  .notion-headings {
-    @apply my-0 font-bold text-slate-800;
-  }
-
-  .notion-prose-img {
-    @apply my-0;
-  }
-
-  .notion-blockquote {
-    @apply my-4 border border-y-0 border-l-4 border-r-0 border-slate-500 py-3 font-normal not-italic;
-  }
-
-  .notion-li {
-    @apply my-1.5;
-  }
-
-  .notion-list {
-    @apply my-0 pl-6;
-  }
-
-  .notion-blockquote {
-    @apply my-4 py-3;
-  }
-
-  .notion-td {
-    @apply px-[10px] py-[5px];
-  }
-
-  .notion-code {
-    @apply break-words rounded-md bg-gray-100 p-[1px_4px_2px_4px]
-    font-mono text-[90%] font-normal before:content-[''] after:content-[''];
-  }
-
-  .notion-strong {
-    @apply font-medium text-gray-800;
-  }
-
-  .notion-table {
-    @apply my-0;
-  }
-
-  .notion-prose {
-    @apply prose max-w-none leading-normal;
-    @apply prose-a:notion-link;
-    @apply prose-headings:notion-headings;
-    @apply prose-img:notion-prose-img;
-    @apply prose-blockquote:notion-blockquote;
-    @apply prose-h1:text-[1.55rem];
-    @apply prose-h2:text-[1.45rem];
-    @apply prose-h3:text-[1.35rem];
-    @apply prose-li:notion-li;
-    @apply prose-ol:notion-list;
-    @apply prose-ul:notion-list;
-    @apply prose-td:notion-td;
-    @apply prose-hr:my-6;
-    @apply prose-code:notion-code;
-    @apply prose-figure:my-4;
-    @apply prose-strong:notion-strong;
-    @apply prose-table:notion-table;
-  }
-
-  .notion-inline-code {
-    @apply border border-gray-200;
-  }
-
-  .notion-box-shadow {
-    box-shadow:
-      8px 14px 38px #272c310f,
-      1px 3px 8px #272c3108;
-  }
-
-  .notion-scrollbar {
-    &::-webkit-scrollbar {
-      width: 10px;
-      height: 10px;
-    }
-    &::-webkit-scrollbar-thumb {
-      background: #ced4da;
-      border-radius: 10px;
-      &:hover {
-        background: #adb5bd;
-      }
-    }
-    &::-webkit-scrollbar-track {
-      background: transparent;
-    }
-
-    &.notion-scrollbar-small {
-      &::-webkit-scrollbar {
-        width: 7px;
-        height: 7px;
-      }
-      &::-webkit-scrollbar-thumb {
-        border-radius: 7px;
-      }
-    }
-  }
-
-  // Hide webkit search cancel button
-  .notion-hide-wscb {
-    &::-webkit-search-cancel-button {
-      -webkit-appearance: none;
-      display: none;
-    }
-  }
-}
-
-.post-card-wave {
-  background: #fff;
-  box-shadow:
-    8px 14px 38px #272c310f,
-    1px 3px 8px #272c3108;
-  height: 100%;
-  min-height: 8rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 1rem;
-  border-radius: 12px;
-  transition: all 0.3s ease-in-out;
-  position: relative;
-  overflow: hidden;
-
-  .bottom-wave {
-    position: absolute;
-    bottom: -2px;
-    width: 100%;
-
-    .waves {
-      position: relative;
-      width: 100%;
-      height: 5vh;
-      margin-bottom: -7px; /*Fix for safari gap*/
-      min-height: 60px;
-      max-height: 150px;
-
-      .parallax > use {
-        animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
-      }
-      .parallax > use:nth-child(1) {
-        animation-delay: -2s;
-        animation-duration: 10s;
-      }
-      .parallax > use:nth-child(2) {
-        animation-delay: -5s;
-        animation-duration: 10s;
-      }
-      .parallax > use:nth-child(3) {
-        animation-delay: -7s;
-        animation-duration: 10s;
-      }
-      .parallax > use:nth-child(4) {
-        animation-delay: -1s;
-        animation-duration: 10s;
-      }
-    }
-  }
-}
-
-@keyframes move-forever {
-  0% {
-    transform: translate3d(-90px, 0, 0);
-  }
-  100% {
-    transform: translate3d(85px, 0, 0);
-  }
-}
-
-.saphire-blue {
-  background: #0067a5;
-  background: linear-gradient(to bottom, #0067a5 0%, #005896 100%);
-  background: -webkit-gradient(
-    linear,
-    left top,
-    left bottom,
-    color-stop(0%, #0067a5),
-    color-stop(100%, #005896)
-  );
-  background: -webkit-linear-gradient(top, #0067a5 0%, #005896 100%);
-  background: -moz-linear-gradient(top, #0067a5 0%, #005896 100%);
-  background: -o-linear-gradient(top, #0067a5 0%, #005896 100%);
-  background: -ms-linear-gradient(top, #0067a5 0%, #005896 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0067A5', endColorstr='#005896', GradientType=0);
-  border: 1px solid #004987;
-  box-shadow: inset 0 1px 0 #0f76b4;
-  -webkit-box-shadow: inset 0 1px 0 #0f76b4;
-  -moz-box-shadow: inset 0 1px 0 #0f76b4;
-
-  h1,
-  .xem-them {
-    color: #fff;
-  }
-
-  .xem-them:hover {
-    color: #ffe200;
   }
 }

@@ -27,9 +27,9 @@ export default function BadgeLabel({ children, labelType, className }: BadgeLabe
 
 const getLabelColor = (type: LabelTypeVariant) => {
   return cn({
-    'text-slate-700 bg-slate-100': type === 'draft',
+    'text-slate-700 dark:text-slate-200 bg-slate-100 dark:bg-slate-700': type === 'draft',
     'bg-amber-200 text-amber-900': type === 'new',
-    'bg-slate-200 text-slate-800': type === 'updated',
+    'bg-slate-200 text-slate-800 dark:bg-slate-700 dark:text-slate-200': type === 'updated',
     'bg-green-200 text-green-900': type === 'updatedWithin'
   })
 }

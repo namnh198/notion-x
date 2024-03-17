@@ -159,7 +159,7 @@ export const Block: React.FC<BlockProps> = props => {
                 <div className="notion-page-scroller">
                   <main
                     className={cn(
-                      'notion-page notion-prose',
+                      'notion-page notion-prose dark:notion-prose-invert',
                       {
                         'notion-page-has-image-icon': !!isPageIconUrl,
                         'notion-page-has-text-icon': !isPageIconUrl,
@@ -250,7 +250,7 @@ export const Block: React.FC<BlockProps> = props => {
     case 'sub_sub_header': {
       if (!block.properties) return null
 
-      const blockColor = block.format?.block_color
+      const blockColor = block.format?.block_color ?? 'primary'
       const id = uuidToId(block.id)
       const title = getTextContent(block.properties.title) || `Notion Header ${id}`
       const anchor = generateAnchor(id, title)
@@ -590,8 +590,8 @@ export const Block: React.FC<BlockProps> = props => {
         <div className={cn(basicBlockGap)}>
           <a
             className={cn(
-              'flex gap-4 w-full overflow-hidden rounded-md border border-slate-200 p-3',
-              'hover:cursor-pointer hover:border-sky-300 hover:shadow-sm'
+              'flex no-underline gap-4 w-full overflow-hidden rounded-md border border-neutral-200/70 dark:border-slate-600 p-3',
+              'hover:cursor-pointer hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors'
             )}
             href={link[0][0]}
             target="_blank"
@@ -605,7 +605,7 @@ export const Block: React.FC<BlockProps> = props => {
                   </div>
                 )}
                 {block.properties?.description && (
-                  <div className="truncate text-sm font-normal text-slate-600">
+                  <div className="truncate text-sm font-normal text-slate-500 dark:text-slate-400">
                     <Text value={block.properties?.description} block={block} />
                   </div>
                 )}
@@ -621,7 +621,7 @@ export const Block: React.FC<BlockProps> = props => {
                     />
                   </div>
                 )}
-                <div className="text-sm font-normal text-slate-500 truncate">
+                <div className="text-sm font-normal text-slate-500 dark:text-slate-300 truncate">
                   <Text value={link} block={block} />
                 </div>
               </div>
@@ -761,7 +761,7 @@ export const Block: React.FC<BlockProps> = props => {
             return (
               <td
                 key={column}
-                className={cn('border border-slate-300', {
+                className={cn('border border-neutral-200 dark:border-slate-600', {
                   [`notion-${color}`]: color
                 })}
               >

@@ -48,11 +48,11 @@ export default function PostToc(props: PostTocProps) {
   return (
     <nav
       className={cn(
-        'h-fit w-full flex gap-2 flex-col px-4 py-3 bg-slate-50 rounded-xl notion-box-shadow',
+        'h-fit w-full flex gap-2 flex-col px-4 py-3 bg-slate-50 dark:bg-neutral-800 border border-neutral-200 dark:border-slate-600 rounded-xl notion-box-shadow',
         {
           '2xl:hidden': props.inPost, // hide on large screens
           'max-h-full p-3': !props.inPost,
-          'border-[0.5px]': !props.inPost,
+          'border-[0.5px] border-neutral-200 dark:border-slate-600': !props.inPost,
           'max-h-[350px] mt-8 mb-10': props.inPost,
           border: props.inPost
         }
@@ -60,9 +60,7 @@ export default function PostToc(props: PostTocProps) {
       aria-label="Table of contents"
     >
       <button
-        className={cn(
-          'text-slate-700 flex items-center justify-between text-md font-semibold pb-0'
-        )}
+        className={cn('flex items-center justify-between text-md font-semibold pb-0')}
         onClick={() => setShowContent(!showContent)}
       >
         <div className={props.labelTocClassName}>{props.labelTocTitle || 'In this post'}</div>
@@ -78,7 +76,7 @@ export default function PostToc(props: PostTocProps) {
       {showContent && (
         <div
           className={cn(
-            'not-prose pt-3 pl-1 overflow-auto notion-scrollbar notion-scrollbar-small border-t',
+            'pt-3 pl-1 overflow-auto notion-scrollbar notion-scrollbar-small border-t border-neutral-200 dark:border-slate-600',
             {
               'columns-1 md:columns-2': props.inPost
             }
@@ -98,11 +96,12 @@ export default function PostToc(props: PostTocProps) {
                 className={cn(
                   'flex items-baseline gap-2 hover:notion-link text-sm py-1 break-inside-avoid',
                   {
-                    'pl-4 border-l': isH3,
+                    'pl-4 border-l border-neutral dark:border-slate-600': isH3,
                     '-ml-1': isH2,
-                    'font-semibold hover:font-semibold text-slate-700 hover:notion-link-hover':
+                    'font-semibold hover:font-semibold text-slate-700 dark:text-slate-200 hover:notion-link-hover':
                       activeId === anchor && !props.inPost,
-                    'text-slate-700 hover:notion-link-hover': activeId !== anchor || props.inPost
+                    'text-slate-700 dark:text-slate-400 hover:notion-link-hover':
+                      activeId !== anchor || props.inPost
                   }
                 )}
               >

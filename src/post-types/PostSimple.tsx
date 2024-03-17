@@ -44,7 +44,7 @@ export default function PostSimple({ post, options }: PostSimpleProps) {
         {post.pinned && options?.showPinned ? <AiFillPushpin /> : <IsDocumentText />}
         {post.verified && (
           <span className="absolute bottom-[-5px] right-[-5px]">
-            <HiMiniCheckBadge className="text-sm text-gray-400" />
+            <HiMiniCheckBadge className="text-sm text-gray-400 dark:text-gray-300" />
           </span>
         )}
       </div>
@@ -75,7 +75,7 @@ export default function PostSimple({ post, options }: PostSimpleProps) {
           )}
           {post.createdDate && (
             <DateComponent
-              className="text-[0.8rem] text-slate-500 group-hover:text-slate-700"
+              className="text-[0.8rem] text-slate-500 dark:text-slate-400 group-hover:text-slate-700 dark:group-hover:text-slate-200"
               dateString={post.createdDate}
               format="MMM DD, YYYY"
               humanize={options?.humanizeDate}
