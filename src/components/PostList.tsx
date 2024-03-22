@@ -17,7 +17,7 @@ type PostListProps = {
 }
 
 export const postListClass = cn(
-  'rounded-xl bg-white dark:bg-neutral-900 shadow-md border border-neutral-200 dark:border-neutral-700'
+  'rounded-xl bg-white dark:bg-neutral-900 shadow-md border border-neutral-200 dark:border-slate-600'
 )
 
 export default function PostList({

@@ -37,11 +37,11 @@ const getSkeleton = (key: number, postType: PostType): JSX.Element => {
 const PostSimpleSkeleton = (): JSX.Element => (
   <div className="flex items-center gap-3 py-3 px-2">
     <div>
-      <IsDocumentText className="text-xl text-slate-700" />
+      <IsDocumentText className="text-xl text-slate-700 dark:text-slate-200" />
     </div>
     <div className="flex-1 flex justify-start">
-      <div className="h-6 w-3/4 rounded-md bg-slate-200"></div>
+      <div className="h-6 w-3/4 rounded-md bg-slate-200 dark:bg-neutral-700"></div>
     </div>
-    <div className="h-4 w-[150px] rounded-md bg-slate-200"></div>
+    <div className="h-4 w-[150px] rounded-md bg-slate-200 dark:bg-neutral-700"></div>
   </div>
 )
